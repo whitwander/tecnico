@@ -1,0 +1,46 @@
+{
+    "clients": [
+        {
+            "id": "1",
+            "name": "Ada Lovelace",
+            "email": "ada.lovelace@example.com",
+            "phone": "+55 11 98765-4321",
+            "company": "Babbage Inc."
+        },
+        {
+            "id": "2",
+            "name": "Grace Hopper",
+            "email": "grace.hopper@example.com",
+            "phone": "+55 21 99876-5432",
+            "company": "COBOL Corp."
+        },
+        {
+            "id": "3",
+            "name": "Margaret Hamilton",
+            "email": "margaret.hamilton@example.com",
+            "phone": "+55 11 91234-5678",
+            "company": "Apollo Systems"
+        },
+        {
+            "id": "4",
+            "name": "Katherine Johnson",
+            "email": "katherine.johnson@example.com",
+            "phone": "+55 85 98888-7777",
+            "company": "NASA"
+        },
+        {
+            "id": "5",
+            "name": "Alan Turing",
+            "email": "alan.turing@example.com",
+            "phone": "+55 11 97777-6666",
+            "company": "Enigma Solutions"
+        },
+        {
+            "id": "6",
+            "name": "Tim Berners-Lee",
+            "email": "tim.bl@example.com",
+            "phone": "+55 21 96666-5555",
+            "company": "World Wide Web Consortium"
+        }
+    ]
+}
