@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import Image from "next/image";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -27,7 +28,20 @@ export default function RootLayout({
       <body
         className={`${geistSans.variable} ${geistMono.variable} antialiased`}
       >
+        <header className="flex justify-center p-2 border shadow-xs">
+          <Image
+            src="icon.svg"
+            alt="Logo da empresa"
+            width={18}
+            height={18}
+            className="mr-1"
+          />
+          <h1 className="font-semibold">Clientes</h1>
+        </header>
         {children}
+        <footer className="flex justify-center p-1 border shadow-xs mt-5">
+          <h1 className="text-"> 	&copy; 2025</h1>
+        </footer>
       </body>
     </html>
   );
