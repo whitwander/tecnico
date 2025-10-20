@@ -9,11 +9,15 @@ import {
 import { SearchIcon } from "lucide-react";
 import { useState } from "react";
 
-export default function SearchBar() {
+interface SearchBarProps {
+    onSearch: (value: string) => void;
+}
+
+export default function SearchBar({ onSearch }: SearchBarProps) {
     const [search, setSearch] = useState<string>('')
 
     const handleSearch = () => {
-        console.log(search)
+        onSearch(search)
     }
 
     return (
