@@ -26,23 +26,28 @@ export default function RootLayout({
   return (
     <html lang="pt-br">
       <body
-        className={`${geistSans.variable} ${geistMono.variable} antialiased`}
+        className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <header className="flex justify-center p-2 border shadow-xs">
           <Image
             src="icon.svg"
             alt="Logo da empresa"
-            width={18}
-            height={18}
-            className="mr-1"
+            width={26}
+            height={26}
+            className="mr-2 self-center"
           />
-          <h1 className="font-semibold">Clientes</h1>
+          <h1 className="text-2xl">Clientes</h1>
         </header>
-        {children}
-        <footer className="flex justify-center p-1 border shadow-xs mt-5">
-          <h1 className="text-"> 	&copy; 2025</h1>
+
+        <main className="flex-grow">
+          {children}
+        </main>
+
+        <footer className="w-full flex justify-center p-1 border shadow-xs bg-white">
+          <h1>&copy; 2025</h1>
         </footer>
       </body>
     </html>
+
   );
 }
