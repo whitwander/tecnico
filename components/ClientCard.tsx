@@ -19,8 +19,8 @@ export interface Client {
 
 export default function ClientCard({ name, email, company, onClick }: Client) {
     return (
-        <button className="w-[95%]" onClick={onClick}>
-            <Card>
+        <button className="w-[95%] cursor-pointer " onClick={onClick}>
+            <Card className="hover:bg-amber-50 transition duration-300 ease-in-out">
                 <CardHeader className="flex flex-col">
                     <div className="flex gap-2 items-center">
                         <User />

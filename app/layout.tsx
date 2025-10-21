@@ -29,13 +29,6 @@ export default function RootLayout({
         className={`${geistSans.variable} ${geistMono.variable} antialiased min-h-screen flex flex-col`}
       >
         <header className="flex justify-center p-2 border shadow-xs">
-          <Image
-            src="icon.svg"
-            alt="Logo da empresa"
-            width={26}
-            height={26}
-            className="mr-2 self-center"
-          />
           <h1 className="text-2xl">Clientes</h1>
         </header>
 
