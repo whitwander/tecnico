@@ -4,12 +4,14 @@ import { useState } from "react"
 import ClientCard from "@/components/ClientCard"
 import SearchBar from "@/components/SearchBar"
 import clients from "@/public/clients.json"
-import { LoaderCircle, User } from "lucide-react"
+import { Frown, User } from "lucide-react"
 
 export default function Home() {
   const [resultados, setResultados] = useState(clients.clients)
   const [selectedClient, setSelectedClient] = useState<any | null>(null)
   const [fade, setFade] = useState(false)
+
+  const [notFound, setNotFound] = useState(false)
 
   const handleSearch = (query: string) => {
     const termo = query.toLowerCase()
@@ -17,6 +19,12 @@ export default function Home() {
       item.name.toLowerCase().includes(termo)
     )
     setResultados(filtrados)
+
+    if (filtrados.length === 0) {
+      setNotFound(true)
+    } else {
+      setNotFound(false)
+    }
   }
 
   const handleCardClick = (id: string) => {
@@ -42,6 +50,13 @@ export default function Home() {
   return (
     <div className="font-sans flex flex-col items-center justify-start min-h-screen p-8 pb-5 gap-8 sm:p-5">
       {!selectedClient && <SearchBar onSearch={handleSearch} />}
+
+      {notFound && (
+        <div className="flex gap-2 text-gray-400">
+          <Frown />
+          <h1>Cliente não encontrado em nossos dados.</h1>
+        </div>
+      )}
 
       <div className={`relative flex flex-col md:grid md:grid-cols-2 md:grid-rows-3 lg:grid lg:grid-cols-3 lg:grid-rows-2 w-[95%] lg:w-full lg:px-10 gap-4 items-center transition-all duration-300`}>
         {!selectedClient && (
@@ -87,6 +102,5 @@ export default function Home() {
         )}
       </div>
     </div>
-
   )
 }
